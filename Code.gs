@@ -56,7 +56,7 @@ function getStudentCaseChange(sheet, newCaseTotal) {
 
 // Scrapes staff table and formats data
 function scrapeStaff($, sheet) {
-  let staffData = $('article > table > tbody > tr > td').map(function () {
+  let staffData = $('table').eq(1).find('tbody > tr > td').map(function () {
     let num = $(this).text().trim();
     num = (num.indexOf('*') > -1) ? num.slice(0,num.indexOf('*')) : num;
     return num;
